@@ -38,3 +38,4 @@ for (let i of Object.keys(Triangle))
     print(i)
 }
 print(Triangle.getArea())
+print("Kuy")
