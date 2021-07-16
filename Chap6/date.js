@@ -1,0 +1,11 @@
+const prompt = require('prompt-sync')()
+var n = new Date()
+// var nt = "2020/12/31"
+// var newNt = Date.parse(nt)
+// let lt = Date(newNt)
+// console.log(lt)
+n.setFullYear(2010)
+n.setHours(12)
+n.setMonth(10)
+n.setDate(10)
+console.log(n)
