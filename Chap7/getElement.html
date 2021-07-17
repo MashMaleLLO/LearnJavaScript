@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "des1" > test element </div>
+    <div id = "des2" > test element2 </div>
+    <input type = "radio" name = "seq" value= "one" >one <br>
+    <input type = "radio" name = "seq" value= "two" >two <br>
+    <input type = "radio" name = "seq" value= "three" >three <br>
+
+    <script>
+        let buf = document.getElementById('des1')
+        let buf1 = document.getElementById('des2')
+        let buf2 = document.getElementsByName('seq')
+        document.write(` ${buf} and ${buf1} is by ID <br>`)
+        for(i of buf2)
+        {
+            document.write(`${i} is by name and the value is ${i.value}<br>`)
+        }
+        let buf3 = document.getElementsByTagName('input')
+        for(j of buf3)
+        {
+            document.write(`${j} is by tagname <br>`)
+        }
+        var buf4 = buf1.getElementsByTagName('div')
+        document.write(`${buf4} is call by another obj in bytagname`)
+    </script>
+</body>
+</html>

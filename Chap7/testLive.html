@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Hello User</h4>
+    <div id = "discription" >this is my webpage for practice js and html</div>
+    <script>
+        document.write(`
+        <br><br>
+        this commnent creat by tag script
+        <hr>
+        <div style="font-weight: bold; color: cadetblue;">
+        this chap include:
+        </div>
+        <ul>
+            <li>HTML</li>
+            <li>Node.js</li>
+        </ul>
+        `)
+    </script>
+    <script>
+        alert('Hi')
+        let n = Date()
+        alert(`This Day : \n ${n}`)
+        alert("Caution : \n don't mess with me!!!")
+        var nameM = prompt("Press Enter Your name : ")
+        var birthDay = prompt("Press Enter Your BirthDay (D/M/Y) : ")
+        // this is for confirm data or anything that suggest user to do
+        // if ok == true else cancle == flase
+        var cfmData = confirm("Is your data is right?")
+        if (cfmData == false)
+        {
+            nameM = ""
+            birthDay = ""
+            nameM = prompt("Press Enter Your name : ")
+            birthDay = prompt("Press Enter Your BirthDay (D/M/Y) : ")
+        }
+        let pattern = /-|\//
+        let ls = birthDay.split(pattern)
+        let year = parseInt(ls[2])
+        // this is the same as console.log
+        document.write(`Hello there ${nameM} <br>`)
+        //
+        if (2021 - year >= 18)
+        {
+            document.write(`Welcome to our page please enjoy <br>`)
+        }
+        else
+        {
+            document.write(`Sorry ${nameM} we cant access you to our page
+            due to your age is under 18 years. <br>`)
+        }
+    </script>
+    <script src = "testPath.js"></script>
+    <script>
+        let buf = document.getElementById('discription')
+        document.write(buf)
+    </script>
+</body>
+</html>
+
