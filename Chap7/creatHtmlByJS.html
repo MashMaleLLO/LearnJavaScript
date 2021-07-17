@@ -13,12 +13,25 @@
         a.href = 'https://www.google.com'
         a.setAttribute('target', '_blank')
         a.innerHTML = 'Test'
-        document.body.appendChild(a)
         let div = document.createElement('div')
         div.id = 'dv'
         div.innerHTML = 'Hello Google \n'
+        let h4 = document.createElement('h4')
+        h4.innerHTML = "This page creat by javascript only.."
+        let ul = document.createElement('ul')
+        let li = document.createElement('li')
+        let li2 = document.createElement('li')
+        li.innerHTML = 'HI1'
+        li2.innerHTML = 'Hi2'
+        ul.appendChild(li)
+        ul.appendChild(li2)
+        document.body.appendChild(h4)
+        document.body.appendChild(a)
         document.body.appendChild(div)
         div.appendChild(a)
+        document.body.appendChild(ul)
+        let newli = document.querySelector('li')
+        newli.innerHTML = 'newHi'
     </script> 
 </body>
 </html>
