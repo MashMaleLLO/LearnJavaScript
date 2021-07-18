@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function()
+        {
+            let bt = document.getElementById('bt')
+            let img1 = document.querySelector('img')
+            bt.onclick = function(event)
+            {
+                let type = event.type
+                let target = event.target.nodeName
+                let text = event.target.innerText
+                alert(`You ${type}ed ${target.toLowerCase()} ${text}`)
+            }
+            img1.onclick = function(event)
+            {
+                let type = event.type
+                let target = event.target.nodeName
+                let text = event.target.innerText
+                alert(`You ${type}ed ${target.toLowerCase()} ${text}`)
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <button id = 'bt1' onclick="alert('button 1 is Clicked')">
+        Button 1
+    </button>
+    <br><br>
+    <button id = 'bt2' onclick="alert('button 2 is Clicked')">
+        Button 2
+    </button>
+    <br><br>
+    <a href="https://github.com/MashMaleLLO?tab=repositories" 
+        onclick="alert('Link is Clicked')">
+        Go to My github
+    </a>
+    <br><br>
+    <button id = 'bt'>
+        Hello there
+    </button>
+    <br><br>
+    <img src="maleZAZA.jpg" width="80">
+</body>
+</html>
