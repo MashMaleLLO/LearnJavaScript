@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function()
+        {
+            document.getElementById('bt1').innerHTML = 'hi'
+            document.getElementById('sp').innerText = "This is spannn"
+            let img1 = document.querySelector('img')
+            let bt2 = document.getElementById('bt2')
+            bt2.onclick = function()
+            {
+                alert('Button 2 is Clicked')
+            }
+            bt1.onclick = function()
+            {
+                alert('Button 1 is Clicked')
+            }
+            img1.addEventListener('click', function()
+            {
+                alert('IMg1 is clicked')
+            })
+        }
+    </script>
+</head>
+<body>
+    <span id = "sp"></span>
+    <br><br>
+    <button id = "bt1">Test</button>
+    <br>
+    <button id = "bt2">Button 2</button>
+    <br><br>
+    <img src="maleZAZA.jpg" width="80">
+</body>
+</html>
