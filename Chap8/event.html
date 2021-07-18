@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const sayHi = () => {document.write('Hello')}
+        const goYT = () => 
+        {
+            if (confirm('Wanna go to Youtube'))
+            {
+                location.href = 'https://www.youtube.com/'
+            }
+            else
+            {
+                history.back()
+            }
+        }
+        const birthDay = () =>
+        {
+            var pattern = /-|\//
+            var brt = prompt("Enter Your BirthDate (D/M/Y) : ")
+            var ls = brt.split(pattern)
+            var thyear = parseInt(ls[2])
+            if (2021 - thyear >= 18)
+            {
+                document.write('Pls Enjoy our page')
+            }
+            else
+            {
+                document.write('Sry your age is not right')
+            } 
+        }
+    </script>
+    <button onclick="alert('HI')">Hello</button>
+    <br>
+    <img src="maleZAZA.jpg" onerror="this.title='Image Error'">
+    <br>
+    <button onclick=
+    "
+    if (confirm('Are you 18'))
+    {
+        location.href = 'https://www.facebook.com/'
+    }
+    else
+    {
+        location.href = 'https://www.google.com/'
+    }
+    "
+    >Enter</button>
+    <br>
+    <button onclick="goYT()">GO?</button>
+    <br>
+    <script>
+        sayHi()
+        document.write('<br>')
+        birthDay()
+    </script>
+</body>
+</html>
