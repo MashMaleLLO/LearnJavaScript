@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id = "bt1">
+        Button1
+    </button>
+    <br>
+    <button id = "bt2">
+        Button2
+    </button>
+    <br>
+    <img src="maleZAZA.jpg" width="80">
+    <script>
+        let btl = document.getElementById('bt1')
+        let btl2 = document.getElementById('bt2')
+        let img1 = document.querySelector('img')
+        btl.onclick = function()
+        {
+            let btlText = btl.innerText
+            let btlText2 = this.innerText
+            alert('Button 1 is click')
+        }
+        btl2.onclick = function()
+        {
+            let btl2Text = this.innerText
+            alert('Button 2 is Click')
+        }
+        img1.onload = function()
+        {
+            alert('Img malezaza is loaded')
+        }
+        img1.onclick = function()
+        {
+            alert('Img malezaza is Clicked')
+        }
+    </script>
+</body>
+</html>
