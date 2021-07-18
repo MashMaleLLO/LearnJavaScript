@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id = "bt1">Button1</button>
+    <br>
+    <img src="maleZAZA.jpg" width="80"><br><br>
+    <a href="#"> Click ME </a>
+    <script>
+        let btn = document.getElementById('bt1')
+        let img1 = document.querySelector('img')
+        let aRef = document.querySelector('a')
+        btn.addEventListener('click', function()
+        {
+            let btlText = this.innerHTML
+            alert('Button 1 is clicked')
+            // document.write(btlText)
+        })
+        img1.addEventListener('load', function()
+        {
+            alert('Img maleZAZA is loaded')
+        })
+        aRef.addEventListener('click', function()
+        {
+            alert('Link is clicked')
+        })
+    </script>
+</body>
+</html>
