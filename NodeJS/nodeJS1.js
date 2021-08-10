@@ -24,10 +24,17 @@ const Circle =
     }
 }
 
-let inp = prompt("Enter Input : ")
-let colour1 = prompt("Enter Colour : ")
-c = Circle
-c.radius = inp
-c.colour = colour1
-console.log(`This circle is ${c.colour} and it radius is ${c.radius} it area is ${c.getArea()}`)
+// let inp = prompt("Enter Input : ")
+// let colour1 = prompt("Enter Colour : ")
+// c = Circle
+// c.radius = inp
+// c.colour = colour1
+// console.log(`This circle is ${c.colour} and it radius is ${c.radius} it area is ${c.getArea()}`)
+// let inpLis = prompt("Enter Input : ").split(' ')
+// for (i of inpLis)
+// {
+//     print(i)
+// }
+
+module.exports = print
 
