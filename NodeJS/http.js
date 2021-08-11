@@ -11,10 +11,24 @@ const handler = (req, res) =>
     //บรรทัด 12 คือการสร้าง path ไปหา file โดยใช้ path.join __dirname ซึ่งจะได้ directory join กับ ชื่อ
     //file โดยไม่ต้องนั่งเขียน path เอง แล้วให้บรรทัด 13 ไปอ่าน data ใน file นั้นได้เลย
     const filename = path.join(__dirname, "testNode.html")
-    const indexData = fs.readFileSync(filename)
+    const indexData = fs.readFileSync(filename, 'utf-8')
+    const aboutData = fs.readFileSync(path.join(__dirname, 'about.html'))
+    const contactData = fs.readFileSync(path.join(__dirname,'contact.html'))
     //ถ้า set header เป็น text plain จะไม่มอง code ด้านล่างเป็น html tag 
     // res.setHeader('Content-Type', 'text/plain')
-    res.end(indexData)
+    const { url } = req
+    if (url === '/about')
+    {
+        res.end(aboutData)
+    }
+    else if (url === '/contact')
+    {
+        res.end(contactData)
+    }
+    else
+    {
+        res.end(indexData)
+    }
 }
 
 // const server = http.createServer((req, res) => 
