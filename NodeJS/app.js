@@ -36,5 +36,9 @@ const Circle =
 //     print(i)
 // }
 
-module.exports = print
+module.exports = 
+{
+    print,
+    findAreaCircle
+}
 
