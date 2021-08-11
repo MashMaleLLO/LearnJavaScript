@@ -36,3 +36,11 @@ fs.writeFile('output.txt', 'This write by nodeJS','utf-8', (error,data) =>
     console.log("data >>>", data)
 })
 
+fs.appendFile('output.txt', "\n This is appended by appen method",'utf-8', (error,data) => 
+{
+    if(error)
+    {
+        console.log(error)
+    }
+    console.log('dataAppend >>>>',data)
+})
