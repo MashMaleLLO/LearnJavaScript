@@ -10,6 +10,21 @@ const contact = (req, res) =>
     res.send("This is contact page")
 }
 
+app.get('/user/:id', (req,res) => 
+{
+    //const id = req.params.id
+    const { id } = req.params
+    const query = req.query
+    console.log(query)
+    //เอาไปใช้ต่อแบบนี้
+    //const statement = 'SELECT * FROM customers WHERE CustomerId = id'
+    res.send(`<h1>Hello User ${id} and Welcome</h1>`)
+})
+
+app.get('/aboutUs', (req,res)=>
+{
+    res.send('This about us page')
+})
 
 app.get('/', function(req, res)
 {
