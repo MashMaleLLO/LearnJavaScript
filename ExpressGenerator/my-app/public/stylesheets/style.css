@@ -6,3 +6,18 @@ body {
 a {
   color: #00B7FF;
 }
+
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.form-signin {
+  width: 100%;
+  max-width: 420px;
+  padding: 2rem;
+  margin: auto;
+  background-color: #f3f3f3;
+}
