@@ -42,6 +42,8 @@ router.post('/login', async (req, res) => {
     const isCorrect = bcrypt.compareSync(password, user.password)
     if (isCorrect)
     {
+      //เก็บ object user ไว้ไปทำ session 
+      req.session.user = user
       return res.render('index', { user })
     }
     else

@@ -7,8 +7,21 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const authRouter = require('./routes/auth')
+//import session
+const session = require('express-session')
 
 var app = express();
+//session
+app.use(cookieParser())
+app.use(
+    session(
+      {
+        secret: 'Male31609',
+        resave: false,
+        saveUninitialized: false
+      }))
+
+
 
 require('./db')
 
