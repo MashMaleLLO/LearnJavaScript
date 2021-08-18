@@ -10,4 +10,8 @@ block content
         label(for="password" class="sr-only") Password
         input(type="password" name="password" id="password" class="form-control" placeholder="Password" required)
       button(class="btn btn-primary btn-block" type="submit") Login
+
+      if message
+        p.alert.alert-danger #{ message }
+
       a(href="/register", class="btn btn-link") Don't have an account?

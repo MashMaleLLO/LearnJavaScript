@@ -2,5 +2,10 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
-  p Hi there #{user.name}
+  p Welcome to My NodeJS website 
+  if user
+    p Hi there #{ user.name }.
+    p Let we call you #{ user.username }
+  else
+    p Hi there Guest.
+    a(href="/register") Don't have an account?   
