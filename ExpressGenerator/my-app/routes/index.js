@@ -6,17 +6,20 @@ var router = express.Router();
 
 const isloggedIn = (req,res, next) => 
 {
-  if (!req.session.user)
+  if (req.isAuthenticated())
   {
-    res.redirect('/login')
+    next()
   }
-  next()
+  else
+  {
+    return res.redirect('/login')
+  }
 }
 
 
 /* GET home page. */
 router.get('/', isloggedIn, function (req, res, next) {
-  res.render('index', { title: 'Express' , user: req.session.user });
+  res.render('index', { title: 'Express' , user: req.user });
 });
 
 
@@ -28,6 +31,12 @@ router.get("/login", (req,res)=>
 router.get("/register", (req,res)=> 
 {
   res.render('register')
+})
+
+router.get("/logout", (req, res)=>
+{
+  req.logout()
+  res.redirect('/')
 })
 
 module.exports = router;

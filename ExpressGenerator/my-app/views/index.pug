@@ -6,6 +6,8 @@ block content
   if user
     p Hi there #{ user.name }.
     p Let we call you #{ user.username }
+    a(href="/logout", class="btn btn-link") logout 
   else
     p Hi there Guest.
-    a(href="/register") Don't have an account?   
+    a(href="/register") Don't have an account?  
+  

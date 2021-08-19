@@ -2,6 +2,7 @@ const express = require('express')
 const bcrypt = require('bcrypt')
 const router = express.Router()
 const User = require('../model/user')
+const passport = require('passport')
 
 //หลังจากเรา login จะส่ง post มาตรงนี้ แล้วทำการ log 
 router.post('/register', async (req, res) => {
@@ -28,33 +29,16 @@ router.post('/register', async (req, res) => {
 })
 
 
-router.post('/login', async (req, res) => {
+router.post('/login', passport.authenticate('local', 
+{
+  successRedirect: '/',
+  failureRedirect: '/login'
+}),  
+async (req, res) => {
 
   const {username, password} = req.body
 
-  const user = await User.findOne(
-    {
-      username
-    })
-
-  if (user)
-  {
-    const isCorrect = bcrypt.compareSync(password, user.password)
-    if (isCorrect)
-    {
-      //เก็บ object user ไว้ไปทำ session 
-      req.session.user = user
-      return res.render('index', { user })
-    }
-    else
-    {
-      return res.render('login', { message: "username or password is incorrect."})
-    }
-  }
-  else
-  {
-    return res.render('login', { message: "User not Found." })
-  }
+  res.redirect('/')
 
 })
 module.exports = router

@@ -9,6 +9,60 @@ var usersRouter = require('./routes/users');
 const authRouter = require('./routes/auth')
 //import session
 const session = require('express-session')
+//import passport
+const passport = require('passport')
+const localStrategy = require('passport-local');
+
+const User = require('./model/user');
+const bcrypt = require('bcrypt')
+
+
+
+//strategy
+passport.use(new localStrategy((username, password, callback) => 
+{
+  User.findOne( { username }, (err, user) => 
+  {
+    if (err)
+    {
+        return callback(err)
+    }
+
+    if (!user)
+    {
+      return callback(null, false)
+    }
+
+    if (bcrypt.compareSync(password, user.password))
+    {
+      return callback(null, user)
+    }
+    return callback(null, false)
+  })
+}))
+
+//serialize
+
+passport.serializeUser((user, cb)=>
+{
+  cb(null, user._id)
+})
+
+passport.deserializeUser((id, cb)=>
+{
+  User.findById(id, (err, user)=>
+  {
+      if (err)
+      {
+        return cb(err)
+      }
+      cb(null, user)
+  })
+})
+
+
+
+
 
 var app = express();
 //session
@@ -34,6 +88,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+//init passport
+app.use(passport.initialize())
+app.use(passport.session())
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
