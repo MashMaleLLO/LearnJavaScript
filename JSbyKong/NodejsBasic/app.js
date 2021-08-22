@@ -19,8 +19,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//เวลาเราจะใช้ router ต้องมาเพิ่มตรง นี้ด้วย
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/about', indexRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
