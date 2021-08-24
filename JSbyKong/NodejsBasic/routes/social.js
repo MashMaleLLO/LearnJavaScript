@@ -8,7 +8,7 @@ router.get('/', (req, res, next) =>
 
 router.get('/Q&A', (req, res, next) => 
 {
-    res.send('Q and A page.')
+    res.render('qAnda')
 })
 
 router.get('/gallery', (req, res, next) => 
