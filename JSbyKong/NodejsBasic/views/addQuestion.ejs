@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <meta charset="utf-8">
+        <title>Q&A.</title>
+        <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+  </head>
+  <body>
+    <%- include layout %>
+    <div class = 'container-fluid'>
+        <h1>Create your question.</h1>
+        <br>
+        <form class="" action="/social/Q&A/addQuestion" method="post">
+            <div class="form-group">
+                <label for="">Title : </label>
+                <input type="text" name="name" value="" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Detail : </label>
+                <textarea name="detail" id="" cols="80" rows="8" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="">Tag : </label>
+                <input type="text" name="tag" value="" class="form-control">
+            </div>
+            <br>
+            <input type="submit" name="" value="Submit" class="btn btn-primary"> 
+        </form>
+        <br>
+        <a href="/social/Q&A">back to q and a .</a>
+        <br>
+        <a href="/social">Back to Community.</a>
+    </div>
+    <script>
+        CKEDITOR.replace( 'detail' );
+    </script>
+  </body>
+</html>
