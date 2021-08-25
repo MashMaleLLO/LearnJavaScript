@@ -13,7 +13,7 @@
         <% if(locals.error) { %>
             <ul>
                 <% Object.values(error).forEach(function(i){ %>
-                    <li><%- i.msg %></li>
+                    <li class="alert alert-danger" ><%- i.msg %></li>
                 <% }) %>
             </ul>
         <% } %>

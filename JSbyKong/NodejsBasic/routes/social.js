@@ -31,7 +31,10 @@ router.post('/Q&A/addQuestion',
     {
         res.render('addQuestion', { error: error })
     }
-    res.render('addQuestion')
+    else
+    {
+        res.render('addQuestion')
+    }
 })
 
 router.get('/gallery', (req, res, next) => 
