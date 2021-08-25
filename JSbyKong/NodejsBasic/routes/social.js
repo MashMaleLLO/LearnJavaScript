@@ -1,6 +1,7 @@
+const e = require('express')
 const express = require('express')
 const router = express.Router()
-
+const { check, validationResult } = require("express-validator")
 router.get('/', (req, res, next) => 
 {
     res.render('social')
@@ -16,11 +17,19 @@ router.get('/Q&A/addQuestion', (req, res, next) =>
     res.render('addQuestion')
 })
 
-router.post('/Q&A/addQuestion', (req, res, next) => 
+router.post('/Q&A/addQuestion',
+[
+    check("name", "Please name your forum.").not().isEmpty(),
+    check("detail", "Please enter you detail.").not().isEmpty(),
+    check("tag", "Please enter you tag.").not().isEmpty()
+],
+(req, res, next) => 
 {
-    console.log(req.body.name)
-    console.log(req.body.detail)
-    console.log(req.body.tag)
+    const error = validationResult(req)
+    if (!error.isEmpty())
+    {
+        console.log(error)
+    }
     res.render('addQuestion')
 })
 
