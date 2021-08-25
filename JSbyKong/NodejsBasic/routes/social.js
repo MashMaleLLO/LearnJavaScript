@@ -25,10 +25,11 @@ router.post('/Q&A/addQuestion',
 ],
 (req, res, next) => 
 {
-    const error = validationResult(req)
-    if (!error.isEmpty())
+    const result = validationResult(req)
+    var error = result.errors
+    if (!result.isEmpty())
     {
-        console.log(error)
+        res.render('addQuestion', { error: error })
     }
     res.render('addQuestion')
 })

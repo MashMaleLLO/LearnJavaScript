@@ -10,6 +10,13 @@
     <div class = 'container-fluid'>
         <h1>Create your question.</h1>
         <br>
+        <% if(locals.error) { %>
+            <ul>
+                <% Object.values(error).forEach(function(i){ %>
+                    <li><%- i.msg %></li>
+                <% }) %>
+            </ul>
+        <% } %>
         <form class="" action="/social/Q&A/addQuestion" method="post">
             <div class="form-group">
                 <label for="">Title : </label>
