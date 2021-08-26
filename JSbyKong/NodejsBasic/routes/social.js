@@ -1,6 +1,8 @@
 const e = require('express')
 const express = require('express')
 const router = express.Router()
+const db = require('monk')('localhost:27017/QuestionDB')
+
 const { check, validationResult } = require("express-validator")
 router.get('/', (req, res, next) => 
 {
@@ -33,7 +35,25 @@ router.post('/Q&A/addQuestion',
     }
     else
     {
-        res.render('addQuestion')
+        var collection = db.get('question')
+        const { name,detail,tag } = req.body
+        collection.insert(
+            {
+                name: name,
+                detail: detail,
+                tag: tag
+            }, (error, question) => 
+            {
+                if(error)
+                {
+                    res.send(error)
+                }
+                else
+                {
+                    res.location('/social/Q&A')
+                    res.redirect('/social/Q&A')
+                }
+            })
     }
 })
 
