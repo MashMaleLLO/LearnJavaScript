@@ -50,6 +50,7 @@ router.post('/Q&A/addQuestion',
                 }
                 else
                 {
+                    req.flash("error", "Data has been added.")
                     res.location('/social/Q&A')
                     res.redirect('/social/Q&A')
                 }
