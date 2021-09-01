@@ -73,9 +73,7 @@ app.use(
         secret: 'Male31609',
         resave: false,
         saveUninitialized: false
-      }))
-
-
+}))
 
 require('./db')
 
