@@ -22,6 +22,11 @@ app.use(cors())
 app.use(express.json())
 ////////////////////////
 
+const questionRouter = require('./routes/question')
+const usersRouter = require('./routes/users')
+
+app.use('/question', questionRouter)
+app.use('/users', usersRouter)
 
 app.listen(port, () => 
 {
